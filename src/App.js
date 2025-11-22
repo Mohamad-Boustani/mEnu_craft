@@ -1,10 +1,9 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div>
-      <div>game control</div>
-    </div>
+    <div><Navbar/></div>
   );
 }
 
