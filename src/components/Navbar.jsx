@@ -30,12 +30,13 @@ function Navbar() {
         <Sidebar open={openDrawer} onClose={() => setOpenDrawer(false)} />
         {/* Navigation Links */}
         <nav className="flex justify-around mt-3 text-black font-medium border-t border-gray-200 pt-2">
-          <Button
+          <Link
+            to="/myorders"
             className="hover:text-black cursor-pointer"
             style={{ background: "none", boxShadow: "none", color: "inherit" }}
           >
             My Orders
-          </Button>
+          </Link>
           <Link
             to="/login"
             className="hover:text-black cursor-pointer"
