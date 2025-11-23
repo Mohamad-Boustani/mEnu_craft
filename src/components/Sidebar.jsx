@@ -5,8 +5,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 
 const menuItems = [
-  { label: "About", link: "/about" },
+  { label: "Home", link: "/home" },
+  { label: "Meals", link: "/meals" },
   { label: "Offers", link: "/offers" },
+  { label: "My Orders", link: "/myorders" },
+  { label: "About", link: "/about" },
 ];
 
 export default function Sidebar({ open, onClose }) {
