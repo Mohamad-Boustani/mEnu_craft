@@ -2,7 +2,7 @@ import React from 'react'
 
 function Mealcard() {
   return (
-    <div>M</div>
+    <div>MealCard Page</div>
   )
 }
 

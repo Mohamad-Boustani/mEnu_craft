@@ -4,6 +4,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import Sidebar from "./Sidebar";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -35,12 +36,13 @@ function Navbar() {
           >
             My Orders
           </Button>
-          <Button
+          <Link
+            to="/login"
             className="hover:text-black cursor-pointer"
             style={{ background: "none", boxShadow: "none", color: "inherit" }}
           >
             Login
-          </Button>
+          </Link>
         </nav>
       </header>
     </div>

@@ -2,7 +2,13 @@ import React from "react";
 
 function About() {
   return (
-    <div className="text-center mt-10 text-lg font-semibold h-screen w-screen bg-gray-700 text-white">
+    <div
+      className="text-center 
+    pt-10 text-lg 
+    font-semibold 
+    min-h-screen 
+    min-w-screen"
+    >
       This page was created by Mohamad Boustani and Amer Osta
     </div>
   );

@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 
-const menuItems = [{ label: "About" }, { label: "Offers" }];
+const menuItems = [
+  { label: "About", link: "/about" },
+  { label: "Offers", link: "/offers" },
+];
 
 export default function Sidebar({ open, onClose }) {
   const [active, setActive] = useState("About");
@@ -22,9 +26,13 @@ export default function Sidebar({ open, onClose }) {
         {/* Menu Options */}
         <div className="flex flex-col gap-6">
           {menuItems.map((item) => (
-            <button
+            <Link
+              to={item.link || "#"}
               key={item.label}
-              onClick={() => setActive(item.label)}
+              onClick={() => {
+                setActive(item.label);
+                if (onClose) onClose();
+              }}
               className={`flex items-center gap-4 text-lg font-medium px-4 py-3 rounded-xl transition-all
                 ${
                   active === item.label
@@ -34,7 +42,7 @@ export default function Sidebar({ open, onClose }) {
             >
               {item.icon}
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
       </div>
