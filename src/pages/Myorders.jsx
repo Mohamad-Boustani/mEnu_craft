@@ -55,8 +55,8 @@ export default function Myorders() {
 
       <div className="flex gap-2 mt-4">
         <Button
+          className="bg-blue-500"
           variant="contained"
-          color="error"
           onClick={() => {
             localStorage.removeItem("orders");
             setOrders([]);
