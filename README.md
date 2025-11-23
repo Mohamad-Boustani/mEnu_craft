@@ -1,6 +1,8 @@
-Links:
-    1.https://github.com/Mohamad-Boustani/menucraft
-    2.https://menucraft123.vercel.app
+X.Links:
+
+    1.https://github.com/Mohamad-Boustani/mEnu_craft
+
+    2.https://m-enu-craft.vercel.app/
 
 A.Contributers:
 
