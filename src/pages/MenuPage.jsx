@@ -4,12 +4,36 @@ import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 
 const menuData = {
   burgers: [
-    { name: "Classic Cheeseburger", desc: "Juicy beef patty, cheddar cheese, lettuce, tomato, pickles, onion & sauce", price: "$9.99" },
-    { name: "Spicy Jalapeño", desc: "Pepper jack cheese, jalapeños, spicy mayo, crispy onion", price: "$11.99" },
-    { name: "BBQ Ranch Burger", desc: "BBQ sauce, bacon, ranch dressing, crispy onion rings", price: "$12.99" },
-    { name: "Bacon Deluxe", desc: "Smoked bacon, cheddar, caramelized onions, special sauce", price: "$13.99" },
-    { name: "Mushroom Swiss", desc: "Sautéed mushrooms, Swiss cheese, garlic aioli", price: "$12.49" },
-    { name: "Veggie Garden", desc: "Grilled veggie patty, avocado, lettuce, tomato", price: "$10.99" }
+    {
+      name: "Classic Cheeseburger",
+      desc: "Juicy beef patty, cheddar cheese, lettuce, tomato, pickles, onion & sauce",
+      price: "$9.99",
+    },
+    {
+      name: "Spicy Jalapeño",
+      desc: "Pepper jack cheese, jalapeños, spicy mayo, crispy onion",
+      price: "$11.99",
+    },
+    {
+      name: "BBQ Ranch Burger",
+      desc: "BBQ sauce, bacon, ranch dressing, crispy onion rings",
+      price: "$12.99",
+    },
+    {
+      name: "Bacon Deluxe",
+      desc: "Smoked bacon, cheddar, caramelized onions, special sauce",
+      price: "$13.99",
+    },
+    {
+      name: "Mushroom Swiss",
+      desc: "Sautéed mushrooms, Swiss cheese, garlic aioli",
+      price: "$12.49",
+    },
+    {
+      name: "Veggie Garden",
+      desc: "Grilled veggie patty, avocado, lettuce, tomato",
+      price: "$10.99",
+    },
   ],
   sides: [
     { name: "Crispy Fries", price: "$3.99" },
@@ -17,24 +41,24 @@ const menuData = {
     { name: "Chicken Wings", price: "$8.99" },
     { name: "Loaded Cheese Fries", price: "$6.99" },
     { name: "Coleslaw", price: "$2.99" },
-    { name: "Mozzarella Sticks", price: "$5.99" }
+    { name: "Mozzarella Sticks", price: "$5.99" },
   ],
   drinks: [
     { name: "Soft Drinks", price: "$2.49" },
     { name: "Fresh Lemonade", price: "$3.49" },
     { name: "Milkshakes", price: "$5.99" },
-    { name: "Iced Tea", price: "$2.49" }
+    { name: "Iced Tea", price: "$2.49" },
   ],
   combos: [
     { name: "Classic Combo", price: "$14.99" },
     { name: "Family Feast", price: "$29.99" },
     { name: "Deluxe Combo", price: "$19.99" },
-    { name: "Kids Meal", price: "$7.99" }
-  ]
+    { name: "Kids Meal", price: "$7.99" },
+  ],
 };
 
-const Section = ({ title, items }) => (
-  <div className="mb-12">
+const Section = ({ id, title, items }) => (
+  <div id={id} className="mb-12">
     <h2 className="text-xl text-black  font-bold flex items-center gap-2 mb-6">
       <LocalFireDepartmentIcon className="text-orange-500" /> {title}
     </h2>
@@ -79,10 +103,10 @@ export default function MenuPage() {
           </p>
         </div>
 
-        <Section title="BURGERS" items={menuData.burgers} />
-        <Section title="SIDES" items={menuData.sides} />
-        <Section title="DRINKS" items={menuData.drinks} />
-        <Section title="COMBOS" items={menuData.combos} />
+        <Section id="burgers" title="BURGERS" items={menuData.burgers} />
+        <Section id="sides" title="SIDES" items={menuData.sides} />
+        <Section id="drinks" title="DRINKS" items={menuData.drinks} />
+        <Section id="combos" title="COMBOS" items={menuData.combos} />
       </div>
     </div>
   );

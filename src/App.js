@@ -5,10 +5,7 @@ import Homepage from "./pages/Homepage.jsx";
 import MenuPage from "./pages/MenuPage.jsx";
 import Navbar from "./components/Navbar.jsx";
 import About from "./pages/About.jsx";
-
-
-
-
+// import Contact from "./pages/Contact.jsx";
 
 function App() {
   return (
@@ -18,6 +15,7 @@ function App() {
         <Route path="/home" Component={Homepage} />
         <Route path="/menu" Component={MenuPage} />
         <Route path="/about" Component={About} />
+        {/* <Route path="/contact" Component={Contact} /> */}
       </Routes>
     </div>
   );
