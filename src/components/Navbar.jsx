@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
+import IconButton from "@mui/material/IconButton";
+import { useCart } from "../context/Cartcontext";
+
+
+
 import {
   AppBar,
   Toolbar,
@@ -20,10 +27,16 @@ import LocalDrinkIcon from "@mui/icons-material/LocalDrink";
 import InventoryIcon from "@mui/icons-material/Inventory";
 
 import { Link, useNavigate } from "react-router-dom";
+import CartDrawer from "./CartDrawer";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+const [cartOpen, setCartOpen] = useState(false);
+const { cartItems, removeFromCart } = useCart();
+
+
+
 
   const goToMenuSection = (id) => {
     navigate("/menu");
@@ -52,6 +65,20 @@ export default function Navbar() {
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
           </div>
+          <div className="flex items-center gap-4">
+  <div className="hidden md:flex gap-6 text-sm text-gray-700">
+    <Link to="/menu">Menu</Link>
+    <Link to="/about">About</Link>
+    <Link to="/contact">Contact</Link>
+  </div>
+
+  <IconButton onClick={() => setCartOpen(true)}>
+    <Badge badgeContent={cartItems.length} color="error">
+      <ShoppingCartIcon className="text-black" />
+    </Badge>
+  </IconButton>
+</div>
+
         </Toolbar>
       </AppBar>
 
@@ -104,6 +131,9 @@ export default function Navbar() {
           </List>
         </div>
       </Drawer>
+          <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+
     </>
+    
   );
 }

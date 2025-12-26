@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Chip } from "@mui/material";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
+import { useCart } from "../context/Cartcontext";
 
 const menuData = {
   burgers: [
@@ -57,7 +58,7 @@ const menuData = {
   ],
 };
 
-const Section = ({ id, title, items }) => (
+const Section = ({ id, title, items, onAdd }) => (
   <div id={id} className="mb-12">
     <h2 className="text-xl text-black  font-bold flex items-center gap-2 mb-6">
       <LocalFireDepartmentIcon className="text-orange-500" /> {title}
@@ -80,6 +81,12 @@ const Section = ({ id, title, items }) => (
               variant="contained"
               size="small"
               className="!bg-orange-500 !rounded-full !text-xs"
+              onClick={() =>
+                onAdd({
+                  name: item.name,
+                  price: Number(item.price.replace("$", "")),
+                })
+              }
             >
               ADD
             </Button>
@@ -91,6 +98,7 @@ const Section = ({ id, title, items }) => (
 );
 
 export default function MenuPage() {
+  const { addToCart } = useCart();
   return (
     <div className="bg-[#fffaf5] py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -103,10 +111,10 @@ export default function MenuPage() {
           </p>
         </div>
 
-        <Section id="burgers" title="BURGERS" items={menuData.burgers} />
-        <Section id="sides" title="SIDES" items={menuData.sides} />
-        <Section id="drinks" title="DRINKS" items={menuData.drinks} />
-        <Section id="combos" title="COMBOS" items={menuData.combos} />
+        <Section id="burgers" title="BURGERS" items={menuData.burgers} onAdd={addToCart} />
+        <Section id="sides" title="SIDES" items={menuData.sides} onAdd={addToCart} />
+        <Section id="drinks" title="DRINKS" items={menuData.drinks} onAdd={addToCart} />
+        <Section id="combos" title="COMBOS" items={menuData.combos} onAdd={addToCart} />
       </div>
     </div>
   );

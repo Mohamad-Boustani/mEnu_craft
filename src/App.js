@@ -7,10 +7,14 @@ import Navbar from "./components/Navbar.jsx";
 import About from "./pages/About.jsx";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
+import { CartProvider } from "./context/Cartcontext";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
+    <>
+    
+    <CartProvider>
       <Navbar />
       <Routes>
         <Route path="/home" Component={Homepage} />
@@ -19,7 +23,9 @@ function App() {
         <Route path="/register" Component={Register} />
         <Route path="/login" Component={Login} />
       </Routes>
-    </div>
+      <Footer />
+    </CartProvider>
+    </>
   );
 }
 
