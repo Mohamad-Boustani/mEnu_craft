@@ -36,16 +36,14 @@ export default function HomePage() {
             </Link>
             <Button
               variant="outlined"
-              className="!border-white !text-white !px-8 !py-3 !rounded-full"
+              className="!border-white !text-white !px-8 !py-3 !rounded-full" onClick={() => window.location.href = '/login'}
             >
               ORDER NOW
             </Button>
           </div>
         </div>
 
-        <Fab color="warning" className="!fixed bottom-6 right-6">
-          <ShoppingCartIcon />
-        </Fab>
+       
       </section>
     </div>
   );

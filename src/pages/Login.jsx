@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   TextField,
   Button,
@@ -13,6 +13,19 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
+
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    if (!phone || !password) {
+      alert("⚠️ Please fill all fields");
+      return;
+    }
+
+    // If both fields are filled
+    navigate("/menu");
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#fffaf5] px-4">
@@ -37,9 +50,12 @@ export default function Login() {
 
         {/* Form */}
         <div className="mt-8 space-y-4">
+          {/* Phone */}
           <TextField
             fullWidth
             placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -54,6 +70,8 @@ export default function Login() {
             fullWidth
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -67,7 +85,7 @@ export default function Login() {
           <Button
             fullWidth
             size="large"
-            onClick={() => navigate("/menu")}
+            onClick={handleLogin}
             className="!bg-gradient-to-r !from-red-600 !to-orange-400 !text-white !rounded-full !py-3"
           >
             Login

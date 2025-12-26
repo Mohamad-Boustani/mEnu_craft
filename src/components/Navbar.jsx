@@ -60,16 +60,12 @@ const { cartItems, removeFromCart } = useCart();
             </span>
           </div>
 
-          <div className="hidden md:flex gap-6 text-sm text-gray-700">
-            <Link to="/menu">Menu</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
-          </div>
           <div className="flex items-center gap-4">
   <div className="hidden md:flex gap-6 text-sm text-gray-700">
     <Link to="/menu">Menu</Link>
     <Link to="/about">About</Link>
     <Link to="/contact">Contact</Link>
+    <Link to="/login">Login</Link>
   </div>
 
   <IconButton onClick={() => setCartOpen(true)}>
